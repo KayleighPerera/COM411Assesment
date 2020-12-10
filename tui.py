@@ -26,6 +26,38 @@ def menu():
     # :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
+def menu():
+  data = ["Load Data",
+          "Process Data",
+          "Visualise Data",
+          "save data",
+          "exit"]
+  return data
+
+def run():
+  print(menu())
+
+  print("please select what you would like to do with your data")
+  user_input = int(input())
+  if (user_input == 1):
+    print(menu()[0])
+    print("Loading data...")
+  if (user_input == 2):
+    print(menu()[1])
+    print("Processing data...")
+  if (user_input == 3):
+    print(menu()[2])
+    print("Visualising data...")
+  if (user_input == 4):
+    print(menu()[3])
+    print("Saving data...")
+  if (user_input == 5):
+    print(menu()[4])
+    print("Exiting...")
+  elif (user_input > 6):
+    print("invalid number")
+  
+run()
 
 def started(operation):
     """
