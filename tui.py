@@ -59,7 +59,7 @@ def run():
   
 run()
 
-def started(operation):
+*def started(operation):
     """
     # Task 3: Display a message to indicate that an operation has started.
 
@@ -73,7 +73,7 @@ def started(operation):
     # TODO: Your code here
     
 
-def completed(operation):
+*def completed(operation):
     """
     #Task 4: Display a message to indicate that an operation has completed.
 
@@ -87,7 +87,7 @@ def completed(operation):
     # TODO: Your code here
 
 
-def error(error_msg):
+*def error(error_msg):
     """
     #Task 5: Display an error message.
 
@@ -113,6 +113,20 @@ def source_data_path():
     #:return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
     # TODO: Your code here
+
+  print("please enter a file path for a data file")
+  file_path_name = input()
+
+  if file_path_name.endswith(".csv"):
+    return file_path_name
+  else:
+    print("not a valid file path")
+
+def run():
+  print(source_data_path())
+
+run()
+
 
 
 def process_type():
