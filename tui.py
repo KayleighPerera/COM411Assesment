@@ -152,11 +152,11 @@ def process_type():
     """
     # TODO: Your code here
 
-  entities = ["1 = Retrieve entity",
-          "2 = Retrieve entity details",
-          "3 = categorize entities by type",
-          "4 = categorize entities by gravity",
-          "5 = summarise entities by orbit"]
+  entities = ["Retrieve entity",
+          "Retrieve entity details",
+          "categorize entities by type",
+          "categorize entities by gravity",
+          "summarise entities by orbit"]
   
   return entities
 
@@ -263,100 +263,126 @@ def list_entity(entity, cols=[]):
 
 def list_entities():
     """
-    Task 11: Display each entity in entities. Only the data for the specified column indexes will be displayed.
-    If no column indexes have been specified, then all the data for an entity will be displayed.
+    #Task 11: Display each entity in entities. Only the data for the specified column indexes will be displayed.
+    #If no column indexes have been specified, then all the data for an entity will be displayed.
 
-    The function should have two parameters as follows:
-    entities    which is a list of entities where each entity itself is a list of data values
-    cols        this is a list of integer values that represent column indexes.
-                the default value for this is an empty list i.e. []
+    #The function should have two parameters as follows:
+    #entities    which is a list of entities where each entity itself is a list of data values
+    #cols        this is a list of integer values that represent column indexes.
+     #           the default value for this is an empty list i.e. []
 
-    You will need to add these parameters to the function definition.
+    #You will need to add these parameters to the function definition.
 
-    The function should iterate through each entity in entities and display the entity.
-    An entity is a list of values e.g. ['Earth', TRUE, 9.8]
-    Only the columns whose indexes are included in cols should be displayed for each entity.
-    If cols is an empty list then all values for the entity should be displayed.
+    #The function should iterate through each entity in entities and display the entity.
+    #An entity is a list of values e.g. ['Earth', TRUE, 9.8]
+    #Only the columns whose indexes are included in cols should be displayed for each entity.
+    #If cols is an empty list then all values for the entity should be displayed.
 
-    :param entities: A list of data values related to an entity
-    :param cols: A list of integer values that represent column indexes
-    :return: Does not return anything
+    #:param entities: A list of data values related to an entity
+    #:param cols: A list of integer values that represent column indexes
+    #:return: Does not return anything
     """
     # TODO: Your code here
 
 
 def list_categories():
     """
-    Task 12: Display the contents of the dictionary categories.
+    #Task 12: Display the contents of the dictionary categories.
 
-    The function should take a single parameter categories which is a dictionary containing category names
-    and a list of entities that belong to the category.
+    #The function should take a single parameter categories which is a dictionary containing category names
+    #and a list of entities that belong to the category.
 
-    You will need to add the parameter categories to the function definition.
+    #You will need to add the parameter categories to the function definition.
 
-    :param categories: A dictionary containing category names and a list of entities that are part of that category
-    :return: Does not return anything
+    #:param categories: A dictionary containing category names and a list of entities that are part of that category
+    #:return: Does not return anything
     """
     # TODO: Your code here
 
 
 def gravity_range():
     """
-    Task 13: Ask the user for the lower and upper limits for gravity and return a tuple containing the limits.
+    #Task 13: Ask the user for the lower and upper limits for gravity and return a tuple containing the limits.
 
-    The function should prompt the user to enter the lower and upper limit for a range of values related to gravity.
-    The values will be floats e.g. 5.1 for lower limit and 9.8 for upper limit.
-    The function should return a tuple containing the lower and upper limits
+    #The function should prompt the user to enter the lower and upper limit for a range of values related to gravity.
+    #The values will be floats e.g. 5.1 for lower limit and 9.8 for upper limit.
+    #The function should return a tuple containing the lower and upper limits
 
-    :return: a tuple with the lower and upper limits
+    #:return: a tuple with the lower and upper limits
     """
     # TODO: Your code here
 
 
 def orbits():
     """
-    Task 14: Ask the user for a list of entity names and return the list.
+    #Task 14: Ask the user for a list of entity names and return the list.
 
-    The function should prompt the user to enter a list of entity names e.g. Jupiter,Earth,Mars
-    The list represents the entities that should be orbited.
-    The user may enter as many entity names as they desire.
-    The function should return a list of the entity names entered by the user.
+    #The function should prompt the user to enter a list of entity names e.g. Jupiter,Earth,Mars
+    #The list represents the entities that should be orbited.
+    #The user may enter as many entity names as they desire.
+    #The function should return a list of the entity names entered by the user.
 
-    :return: a list of entity names
+    #:return: a list of entity names
     """
     # TODO: Your code here
 
 
 def visualise():
     """
-    Task 15: Display a menu of options for how the data should be visualised. Return the user's response.
+    #Task 15: Display a menu of options for how the data should be visualised. Return the user's response.
 
-    A menu should be displayed that contains the following options:
-        'Entities by type', 'Entities by gravity', 'Summary of orbits'
+    #A menu should be displayed that contains the following options:
+     #   'Entities by type', 'Entities by gravity', 'Summary of orbits'
 
-    The user's response should be read in and returned as an integer corresponding to the selected option.
-    For example, 1 for 'Entities by type', 2 for 'Entities by gravity' and so on.
+    #The user's response should be read in and returned as an integer corresponding to the selected option.
+    #For example, 1 for 'Entities by type', 2 for 'Entities by gravity' and so on.
 
-    If the user enters a invalid option then a suitable error message should be displayed and the value
-    None should be returned.
+    #If the user enters a invalid option then a suitable error message should be displayed and the value
+    #None should be returned.
 
-    :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
+    #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
 
+  visualisations = ["Entities by type",
+                    "Entities by gravity",
+                    "Summery of orbits",]
+
+  print("...")
+  return visualisations
+
+
+
+def run():
+  print(visualise())
+
+  print("please select what you would like to see")
+  user_input = int(input())
+  
+  if (user_input == 1):
+    print(visualise()[0])
+  if (user_input == 2):
+    print(visualise()[1])
+  if (user_input == 3):
+    print(visualise()[2])
+  elif (user_input > 6):
+    print("invalid number")
+
+ 
+run()
 
 def save():
     """
-    Task 16: Display a menu of options for how the data should be saved. Return the user's response.
+    #Task 16: Display a menu of options for how the data should be saved. Return the user's response.
 
-    A menu should be displayed that contains the following option:
-         'Export as JSON'
+    #A menu should be displayed that contains the following option:
+     #    'Export as JSON'
 
-    The user's response should be read in and returned as an integer corresponding to the selected option.
+    #The user's response should be read in and returned as an integer corresponding to the selected option.
 
-    If the user enters a invalid option then a suitable error message should be displayed and the value
-    None should be returned.
+    #If the user enters a invalid option then a suitable error message should be displayed and the value
+    #None should be returned.
 
-    :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
+    #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
