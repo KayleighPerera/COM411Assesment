@@ -59,7 +59,7 @@ def run():
   
 run()
 
-*def started(operation):
+def started(operation):
     """
     # Task 3: Display a message to indicate that an operation has started.
 
@@ -71,6 +71,8 @@ run()
     # :return: Does not return anything
     """
     # TODO: Your code here
+    print("{operation} has started")
+    return started
     
 
 *def completed(operation):
