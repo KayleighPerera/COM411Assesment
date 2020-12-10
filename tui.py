@@ -26,7 +26,7 @@ def menu():
     # :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
-def menu():
+
   data = ["Load Data",
           "Process Data",
           "Visualise Data",
@@ -146,6 +146,40 @@ def process_type():
     #:return: None if an invalid selection made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+
+  entities = ["1 = Retrieve entity",
+          "2 = Retrieve entity details",
+          "3 = categorize entities by type",
+          "4 = categorize entities by gravity",
+          "5 = summarise entities by orbit"]
+  
+  return entities
+
+def run():
+  print(process_type())
+  
+
+  print("what would you like to do with your entities")
+  user_input = int(input())
+  if (user_input == 1):
+    print(process_type()[0])
+    print("Retrieving entities...")
+  if (user_input == 2):
+    print(process_type()[1])
+    print("retrieving entity details...")
+  if (user_input == 3):
+    print(process_type()[2])
+    print("categorizing entities by types...")
+  if (user_input == 4):
+    print(process_type()[3])
+    print("categorizing entities by gravity...")
+  if (user_input == 5):
+    print(process_type()[4])
+    print("summarising entities by orbit...")
+  elif (user_input > 6):
+    print("invalid number")
+  
+run()
 
 
 def entity_name():
