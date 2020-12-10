@@ -193,6 +193,17 @@ def entity_name():
     """
     # TODO: Your code here
 
+  print("What is the name of the entity?")
+  name = input()
+  print ("...")
+
+  return name
+ 
+def run():
+  print(entity_name())
+
+run()
+
 
 def entity_details():
     """
