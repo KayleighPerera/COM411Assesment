@@ -71,7 +71,7 @@ def started(operation):
     # :return: Does not return anything
     """
     # TODO: Your code here
-    print("{operation} has started")
+    print('{operation} has started')
     return started
     
 
@@ -87,7 +87,7 @@ def started(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
-    print("{operation} has completed")
+    print('{operation} has completed')
     return completed
 
 *def error(error_msg):
@@ -102,6 +102,8 @@ def started(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
+    print('Error! {error_msg}')
+    return error
 
 
 def source_data_path():
