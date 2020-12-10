@@ -217,6 +217,23 @@ def entity_details():
     #:return: A list containing the name of an entity and a list of column indexes
     """
     # TODO: Your code here
+  
+  print("What is the name of the entity?")
+
+  name = input()
+  print ("...")
+
+  print("enter a list of column indexes")
+  
+  index = [int(input())]
+  print ("...")
+  return name, index
+ 
+def run():
+  print(entity_details())
+
+run()
+
 
 
 def list_entity(entity, cols=[]):
