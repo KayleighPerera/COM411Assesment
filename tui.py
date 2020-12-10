@@ -87,7 +87,8 @@ def started(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
-
+    print("{operation} has completed")
+    return completed
 
 *def error(error_msg):
     """
