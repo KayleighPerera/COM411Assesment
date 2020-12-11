@@ -312,6 +312,17 @@ def gravity_range():
     """
     # TODO: Your code here
 
+  lower_upper= [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
+  
+  print(tuple(lower_upper))
+  
+  
+  return lower_upper
+
+gravity_range()
+
+
+
 
 def orbits():
     """
