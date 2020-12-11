@@ -326,6 +326,15 @@ def orbits():
     """
     # TODO: Your code here
 
+ entities = input("enter a list of the planets names ")
+ planets = entities.split(",")
+
+ print("\n")
+ print("Printing all planet names....")
+ for name in planets:
+    print(name)
+ return planets
+orbit()
 
 def visualise():
     """
@@ -384,5 +393,4 @@ def save():
     #None should be returned.
 
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
-    """
-    # TODO: Your code here
+
