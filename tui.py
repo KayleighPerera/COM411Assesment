@@ -429,3 +429,27 @@ def save():
 
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
 
+
+def save():
+    saved = ["export as JSON"]
+
+    return saved
+
+
+def run():
+    print(save())
+
+    print("How should the data be saved")
+    user_input = int(input())
+
+    if (user_input == 1):
+        print(save())
+        print("...")
+        print("Saving as a JSON file...")
+        print("done")
+    elif (user_input > 2):
+        print("invalid number")
+
+
+run()
+
