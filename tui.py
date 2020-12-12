@@ -298,6 +298,28 @@ def list_categories():
     #:return: Does not return anything
     """
     # TODO: Your code here
+def list_categories(categories):
+  categories_list = {"Terrestrial Planets",
+                     "Gas Giants",
+                     "Ice Giants",
+                     "Dwarf Planets"}
+  select = input()
+
+  if (select == "Terrestrial Planets"):
+   print(entities1 = ["Mercury", "Venus", "Earth", "Mars"])
+
+  if (select == "Gas Giants"):
+   print(entities1 = ["Jupiter", "Saturn"])
+
+  if (select == "Ice Ginats"):
+   print(entities1 = ["Uranus", "Neptune"])
+
+  if (select == "Dwarf Planets"):
+   print(entities1 = ["Pluto", "Eris"])
+  
+   return None
+
+list_categories
 
 
 def gravity_range():
@@ -310,7 +332,9 @@ def gravity_range():
 
     #:return: a tuple with the lower and upper limits
     """
-    # TODO: Your code here
+    # TODO: Your code here#
+    
+    
 
   lower_upper= [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
   
