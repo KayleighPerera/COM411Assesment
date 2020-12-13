@@ -10,6 +10,7 @@ from visual import visual
 # This will be used to store the date read from the source data file.
 # TODO: Your code here
 
+records = []
 
 def run():
 
