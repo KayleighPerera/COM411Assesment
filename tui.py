@@ -7,8 +7,10 @@ def welcome():
     # :return: Does not return anything.
     """
     TODO: Your code here
-    print("------------------------------Solar Record Management System------------------------------")
-    return None
+def welcome():
+
+   title = 'Solar Record Management System'
+   print(len(title) * '-', title, len(title) * '-')
 
 def menu():
     """
@@ -26,6 +28,7 @@ def menu():
     # :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
+def menu():
 
   data = ["Load Data",
           "Process Data",
@@ -71,11 +74,13 @@ def started(operation):
     # :return: Does not return anything
     """
     # TODO: Your code here
+def started(operation):
+
     print('{operation} has started')
     return started
     
 
-*def completed(operation):
+def completed(operation):
     """
     #Task 4: Display a message to indicate that an operation has completed.
 
@@ -87,10 +92,12 @@ def started(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
+def completed(operation):
+
     print('{operation} has completed')
     return completed
 
-*def error(error_msg):
+def error(error_msg):
     """
     #Task 5: Display an error message.
 
@@ -102,6 +109,8 @@ def started(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
+def error():
+
     print('Error! {error_msg}')
     return error
 
@@ -118,6 +127,7 @@ def source_data_path():
     #:return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
     # TODO: Your code here
+def source_data_path():
 
   print("please enter a file path for a data file")
   file_path_name = input()
@@ -151,6 +161,7 @@ def process_type():
     #:return: None if an invalid selection made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+def process_type():
 
   entities = ["Retrieve entity",
           "Retrieve entity details",
@@ -197,6 +208,7 @@ def entity_name():
     #:return: the name of an entity
     """
     # TODO: Your code here
+def entity_name():
 
   print("What is the name of the entity?")
   name = input()
@@ -222,7 +234,8 @@ def entity_details():
     #:return: A list containing the name of an entity and a list of column indexes
     """
     # TODO: Your code here
-  
+def entity_details(): 
+
   print("What is the name of the entity?")
 
   name = input()
@@ -299,6 +312,7 @@ def list_categories():
     """
     # TODO: Your code here
 def list_categories(categories):
+
   categories_list = {"Terrestrial Planets",
                      "Gas Giants",
                      "Ice Giants",
@@ -333,8 +347,7 @@ def gravity_range():
     #:return: a tuple with the lower and upper limits
     """
     # TODO: Your code here#
-    
-    
+def gravity_range():
 
   lower_upper= [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
   
@@ -360,15 +373,15 @@ def orbits():
     #:return: a list of entity names
     """
     # TODO: Your code here
+def orbit():
+  entities = input("enter a list of the planets names ")
+  planets = entities.split(",")
 
- entities = input("enter a list of the planets names ")
- planets = entities.split(",")
-
- print("\n")
- print("Printing all planet names....")
- for name in planets:
+  print("\n")
+  print("Printing all planet names....")
+  for name in planets:
     print(name)
- return planets
+  return planets
 orbit()
 
 def visualise():
@@ -387,6 +400,8 @@ def visualise():
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+    
+def visualise():
 
   visualisations = ["Entities by type",
                     "Entities by gravity",
@@ -431,6 +446,7 @@ def save():
 
 
 def save():
+
     saved = ["export as JSON"]
 
     return saved
