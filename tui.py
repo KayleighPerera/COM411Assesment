@@ -1,20 +1,24 @@
+""""
 def welcome():
-    # Task 1: Display a welcome message.
+    Task 1: Display a welcome message.
 
     # The welcome message should consist of the title 'Solar Record Management System' surrounded by dashes.
     # The number of dashes before and after the title should be equal to the number of characters in the title i.e. 30.
 
     # :return: Does not return anything.
     """
-    TODO: Your code here
+# TODO: Your code here
+
 def welcome():
+    title = 'Solar Record Management System'
+    print(len(title) * '-', title, len(title) * '-')
 
-   title = 'Solar Record Management System'
-   print(len(title) * '-', title, len(title) * '-')
+welcome()
 
+"""
 def menu():
-    """
-    # Task 2: Display a menu of options and read the user's response.
+    
+    #Task 2: Display a menu of options and read the user's response.
 
     # A menu consisting of the following options should be displayed:
     # 'Load Data', 'Process Data', 'Visualise Data', 'Save Data' and 'Exit'
@@ -27,43 +31,47 @@ def menu():
 
     # :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
-    # TODO: Your code here
-def menu():
+# TODO: Your code here
 
-  data = ["Load Data",
-          "Process Data",
-          "Visualise Data",
-          "save data",
-          "exit"]
-  return data
+
+def menu():
+    data = ["Load Data",
+            "Process Data",
+            "Visualise Data",
+            "save data",
+            "exit"]
+    return data
 
 def run():
-  print(menu())
+    print(menu())
 
-  print("please select what you would like to do with your data")
-  user_input = int(input())
-  if (user_input == 1):
-    print(menu()[0])
-    print("Loading data...")
-  if (user_input == 2):
-    print(menu()[1])
-    print("Processing data...")
-  if (user_input == 3):
-    print(menu()[2])
-    print("Visualising data...")
-  if (user_input == 4):
-    print(menu()[3])
-    print("Saving data...")
-  if (user_input == 5):
-    print(menu()[4])
-    print("Exiting...")
-  elif (user_input > 6):
-    print("invalid number")
+    print("please select what you would like to do with your data")
+    user_input = int(input())
+
+    if user_input == 1:
+        print(menu()[0])
+        print("Loading data...")
+    if user_input == 2:
+        print(menu()[1])
+        print("Processing data...")
+    if user_input == 3:
+        print(menu()[2])
+        print("Visualising data...")
+    if user_input == 4:
+        print(menu()[3])
+        print("Saving data...")
+    if user_input == 5:
+        print(menu()[4])
+        print("Exiting...")
+    elif user_input > 6:
+        print("invalid number")
   
 run()
 
+"""
 def started(operation):
-    """
+    
+    
     # Task 3: Display a message to indicate that an operation has started.
 
     # The function should display a message in the following format:
@@ -73,15 +81,16 @@ def started(operation):
     # :param operation: A string indicating the operation being started
     # :return: Does not return anything
     """
-    # TODO: Your code here
+# TODO: Your code here
+
 def started(operation):
 
     print('{operation} has started')
-    return started
+    return started(operation)
     
-
+"""
 def completed(operation):
-    """
+    
     #Task 4: Display a message to indicate that an operation has completed.
 
     #The function should display a message in the following format:
@@ -92,13 +101,15 @@ def completed(operation):
     #:return: Does not return anything
     """
     # TODO: Your code here
+
 def completed(operation):
 
     print('{operation} has completed')
-    return completed
+    return completed(operation)
 
+"""
 def error(error_msg):
-    """
+
     #Task 5: Display an error message.
 
     #The function should display a message in the following format:
@@ -107,16 +118,17 @@ def error(error_msg):
 
     #:param error_msg: A string containing an error message
     #:return: Does not return anything
-    """
+"""
     # TODO: Your code here
+
 def error():
 
     print('Error! {error_msg}')
     return error
 
-
+"""
 def source_data_path():
-    """
+    
     #Task 6: Retrieve a file path to the source data file.
 
     #The function should prompt the user to enter the file path for a data file (e.g. 'data/sol_data.csv').
@@ -127,6 +139,7 @@ def source_data_path():
     #:return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
     # TODO: Your code here
+
 def source_data_path():
 
   print("please enter a file path for a data file")
@@ -143,9 +156,9 @@ def run():
 run()
 
 
-
+"""
 def process_type():
-    """
+    
     #Task 7: Display a menu of options for how the file should be processed. Read in the user's response.
 
     #A menu should be displayed that contains the following options:
@@ -177,29 +190,29 @@ def run():
 
   print("what would you like to do with your entities")
   user_input = int(input())
-  if (user_input == 1):
+  if user_input == 1:
     print(process_type()[0])
     print("Retrieving entities...")
-  if (user_input == 2):
+  if user_input == 2:
     print(process_type()[1])
     print("retrieving entity details...")
-  if (user_input == 3):
+  if user_input == 3:
     print(process_type()[2])
     print("categorizing entities by types...")
-  if (user_input == 4):
+  if user_input == 4:
     print(process_type()[3])
     print("categorizing entities by gravity...")
-  if (user_input == 5):
+  if user_input == 5:
     print(process_type()[4])
     print("summarising entities by orbit...")
-  elif (user_input > 6):
+  elif user_input > 6:
     print("invalid number")
   
 run()
 
-
+"""
 def entity_name():
-    """
+    
     #Task 8: Read in the name of an entity and return the name.
 
     #The function should ask the user to enter the name of an entity e.g. 'Earth'
@@ -215,15 +228,10 @@ def entity_name():
   print ("...")
 
   return name
- 
-def run():
-  print(entity_name())
 
-run()
-
-
+"""
 def entity_details():
-    """
+    
     #Task 9: Read in the name of an entity and column indexes. Return a list containing the name and indexes.
 
     #The function should ask the user to enter the name of an entity e.g. 'Earth'
@@ -253,9 +261,9 @@ def run():
 run()
 
 
-
+"""
 def list_entity(entity, cols=[]):
-    """
+    
     #Task 10: Display an entity. Only the data for the specified column indexes will be displayed.
     #If no column indexes have been specified, then all the data for the entity will be displayed.
 
@@ -273,9 +281,9 @@ def list_entity(entity, cols=[]):
     """
     # TODO: Your code here
 
-
+"""
 def list_entities():
-    """
+   
     #Task 11: Display each entity in entities. Only the data for the specified column indexes will be displayed.
     #If no column indexes have been specified, then all the data for an entity will be displayed.
 
@@ -297,9 +305,9 @@ def list_entities():
     """
     # TODO: Your code here
 
-
+"""
 def list_categories():
-    """
+    
     #Task 12: Display the contents of the dictionary categories.
 
     #The function should take a single parameter categories which is a dictionary containing category names
@@ -313,31 +321,31 @@ def list_categories():
     # TODO: Your code here
 def list_categories(categories):
 
-  categories_list = {"Terrestrial Planets",
+    categories = {"Terrestrial Planets",
                      "Gas Giants",
                      "Ice Giants",
                      "Dwarf Planets"}
-  select = input()
+    select = input()
 
-  if (select == "Terrestrial Planets"):
-   print(entities1 = ["Mercury", "Venus", "Earth", "Mars"])
+    if select == "Terrestrial Planets":
+        print(select == ["Mercury", "Venus", "Earth", "Mars"])
 
-  if (select == "Gas Giants"):
-   print(entities1 = ["Jupiter", "Saturn"])
+    if select == "Gas Giants":
+        print(select == ["Jupiter", "Saturn"])
 
-  if (select == "Ice Ginats"):
-   print(entities1 = ["Uranus", "Neptune"])
+    if select == "Ice Giants":
+        print(select == ["Uranus", "Neptune"])
 
-  if (select == "Dwarf Planets"):
-   print(entities1 = ["Pluto", "Eris"])
+    if select == "Dwarf Planets":
+        print(select == ["Pluto", "Eris"])
   
-   return None
-
-list_categories
+    return None
 
 
+
+"""
 def gravity_range():
-    """
+    
     #Task 13: Ask the user for the lower and upper limits for gravity and return a tuple containing the limits.
 
     #The function should prompt the user to enter the lower and upper limit for a range of values related to gravity.
@@ -360,9 +368,9 @@ gravity_range()
 
 
 
-
+"""
 def orbits():
-    """
+    
     #Task 14: Ask the user for a list of entity names and return the list.
 
     #The function should prompt the user to enter a list of entity names e.g. Jupiter,Earth,Mars
@@ -384,8 +392,9 @@ def orbit():
   return planets
 orbit()
 
+"""
 def visualise():
-    """
+    
     #Task 15: Display a menu of options for how the data should be visualised. Return the user's response.
 
     #A menu should be displayed that contains the following options:
@@ -399,39 +408,36 @@ def visualise():
 
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
-    # TODO: Your code here
+# TODO: Your code here
     
 def visualise():
 
-  visualisations = ["Entities by type",
-                    "Entities by gravity",
-                    "Summery of orbits",]
-
-  print("...")
-  return visualisations
-
-
+    visualisations = ["Entities by type",
+                      "Entities by gravity",
+                      "Summery of orbits"]
+    print("...")
+    return visualisations
 
 def run():
-  print(visualise())
+    print(visualise())
+    print("please select what you would like to see")
+    user_input = int(input())
 
-  print("please select what you would like to see")
-  user_input = int(input())
-  
-  if (user_input == 1):
-    print(visualise()[0])
-  if (user_input == 2):
-    print(visualise()[1])
-  if (user_input == 3):
-    print(visualise()[2])
-  elif (user_input > 6):
-    print("invalid number")
+    if user_input == 1:
+        print(visualise()[0])
+    if user_input == 2:
+        print(visualise()[1])
+    if user_input == 3:
+        print(visualise()[2])
+    elif user_input > 6:
+        print("invalid number")
 
  
 run()
 
+"""
 def save():
-    """
+    
     #Task 16: Display a menu of options for how the data should be saved. Return the user's response.
 
     #A menu should be displayed that contains the following option:
@@ -443,7 +449,7 @@ def save():
     #None should be returned.
 
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
-
+"""
 
 def save():
 
@@ -458,12 +464,12 @@ def run():
     print("How should the data be saved")
     user_input = int(input())
 
-    if (user_input == 1):
+    if user_input == 1:
         print(save())
         print("...")
         print("Saving as a JSON file...")
         print("done")
-    elif (user_input > 2):
+    elif user_input > 2:
         print("invalid number")
 
 
