@@ -57,10 +57,10 @@ while True:
 
     if menu() == 1:
         from tui import started
-        from tui import completed
         from tui import source_data_path
         for line in source_data_path():
             records.append(records)
+        from tui import completed
 
 
 # Task 22: Check if the user selected the option for processing data.  If so, then do the following:
@@ -69,66 +69,105 @@ while True:
         # - Process the data (see below).
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
         # operation has completed.
-        #
         # To process the data, it is recommended that you create and call one or more separate functions that do the
         # following:
         # - Use the appropriate function in the module tui to display a menu of options for processing the data.
-        # - Check what option has been selected
+        # - Check what option has been selected ✓
         #
         #   - If the user selected the option to retrieve an entity then
         #       - Use the appropriate function in the module tui to indicate that the entity retrieval process
-        #       has started.
-        #       - Use the appropriate function in the module tui to retrieve the entity name
+        #       has started. ✓
+        #       - Use the appropriate function in the module tui to retrieve the entity name ✓
         #       - Find the record for the specified entity in records.  You should appropriately handle the case
-        #       where the entity cannot be found.
-        #       - Use the appropriate function in the module tui to list the entity
+        #       where the entity cannot be found.  ✓
+        #       - Use the appropriate function in the module tui to list the entity ✓
         #       - Use the appropriate function in the module tui to indicate that the entity retrieval process has
-        #       completed.
+        #       completed.  ✓
         #
         #   - If the user selected the option to retrieve an entity's details then
         #       - Use the appropriate function in the module tui to indicate that the entity details retrieval
-        #       process has started.
-        #       - Use the appropriate function in the module tui to retrieve the entity details
+        #       process has started.✓
+        #       - Use the appropriate function in the module tui to retrieve the entity details ✓
         #       - Find the record for the specified entity details in records.  You should appropriately handle the
-        #       case where the entity cannot be found.
-        #       - Use the appropriate function in the module tui to list the entity
+        #       case where the entity cannot be found.✓
+        #       - Use the appropriate function in the module tui to list the entity ✓
         #       - Use the appropriate function in the module tui to indicate that the entity details retrieval
-        #       process has completed.
+        #       process has completed. ✓
         #
         #   - If the user selected the option to categorise entities by their type then
         #       - Use the appropriate function in the module tui to indicate that the entity type categorisation
-        #       process has started.
+        #       process has started. ✓
         #       - Iterate through each record in records and assemble a dictionary containing a list of planets
-        #       and a list of non-planets.
-        #       - Use the appropriate function in the module tui to list the categories.
+        #       and a list of non-planets.✓
+        #       - Use the appropriate function in the module tui to list the categories. ✓
         #       - Use the appropriate function in the module tui to indicate that the entity type categorisation
-        #       process has completed.
+        #       process has completed. ✓
         #
         #   - If the user selected the option to categorise entities by their gravity then
         #       - Use the appropriate function in the module tui to indicate that the categorisation by entity gravity
-        #       process has started.
-        #       - Use the appropriate function in the module tui to retrieve a gravity range
+        #       process has started.✓
+        #       - Use the appropriate function in the module tui to retrieve a gravity range ✓
         #       - Iterate through each record in records and assemble a dictionary containing lists of entities
-        #       grouped into low (below lower limit), medium and high (above upper limit) gravity categories.
-        #       - Use the appropriate function in the module tui to list the categories.
+        #       grouped into low (below lower limit), medium and high (above upper limit) gravity categories. ✓
+        #       - Use the appropriate function in the module tui to list the categories. ✓
         #       - Use the appropriate function in the module tui to indicate that the categorisation by entity gravity
-        #       process has completed.
+        #       process has completed. ✓
         #
         #   - If the user selected the option to generate an orbit summary then
         #       - Use the appropriate function in the module tui to indicate that the orbit summary process has
-        #       started.
-        #       - Use the appropriate function in the module tui to retrieve a list of orbited planets.
+        #       started. ✓
+        #       - Use the appropriate function in the module tui to retrieve a list of orbited planets. ✓
         #       - Iterate through each record in records and find entities that orbit a planet in the list of
         #       orbited planets.  Assemble the found entities into a nested dictionary such that each entity can be
         #       accessed as follows:
         #           name_of_dict[planet_orbited][category]
-        #       where category is "low" if the mean radius of the entity is below 100 and "high" otherwise.
+        #       where category is "low" if the mean radius of the entity is below 100 and "high" otherwise. *
         #       - Use the appropriate function in the module tui to list the categories.
         #       - Use the appropriate function in the module tui to indicate that the orbit summary process has
-        #       completed.
+        #       completed. ✓
         # TODO: Your code here
 
-"""
+    if menu() == 2:
+        from tui import started
+        from tui import process_type
+        from tui import completed
+
+        if process_type() == 1:
+            from tui import started
+            from tui import entity_name
+            from tui import entity_details
+            index = records.index
+            from tui import completed
+
+        if process_type() == 2:
+            from tui import started
+            from tui import entity_details
+            index = records.index
+            from tui import list_entities
+            from tui import completed
+
+        if process_type() == 4:
+            from tui import started
+            records.append(f"{list_categories}")
+            from tui import list_categories
+            from tui import completed
+
+        if process_type() == 5:
+            from tui import started
+            from tui import gravity_range
+            records.index = {{list_entities}}
+            from tui import list_categories
+            from tui import completed
+
+        if process_type() == 6:
+            from tui import started
+            from tui import orbit
+            records.index = {{orbit}}
+            records.index = {{list_categories}}
+            from tui import list_categories
+            from tui import completed
+
+
 # Task 23: Check if the user selected the option for visualising data.  If so, then do the following:
 # - Use the appropriate function in the module tui to indicate that the data visualisation operation
 # has started.
