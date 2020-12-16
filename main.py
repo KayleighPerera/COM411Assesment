@@ -21,8 +21,12 @@ def run():
     # This will display our welcome message when the program is executed.
     #TODO: Your code here
 """
+
+
 def run():
     from tui import welcome
+
+
 run()
 
 while True:
@@ -36,27 +40,31 @@ while True:
 
     from tui import menu
 
-    """
-        # Task 21: Check if the user selected the option for loading data.  If so, then do the following:
-        # - Use the appropriate function in the module tui to display a message to indicate that the data loading
-        # operation has started.
-        # - Load the data (see below).
-        # - Use the appropriate function in the module tui to display a message to indicate that the data loading
-        # operation has completed.
-        #
-        # To load the data, it is recommended that you create and call one or more separate functions that do the
-        # following:
-        # - Use the appropriate function in the module tui to retrieve a file path for the CSV data file.  You
-        # should appropriately handle the case where this is None.
-        # - Read each line from the CSV file and add it to the list 'records'. You should appropriately handle the case
-        # where the file cannot be found
-        # TODO: Your code here
-    """
+
+# Task 21: Check if the user selected the option for loading data.  If so, then do the following:
+# - Use the appropriate function in the module tui to display a message to indicate that the data loading
+# operation has started.
+# - Load the data (see below).
+# - Use the appropriate function in the module tui to display a message to indicate that the data loading
+# operation has completed.
+# To load the data, it is recommended that you create and call one or more separate functions that do the
+# following:
+# - Use the appropriate function in the module tui to retrieve a file path for the CSV data file.  You
+# should appropriately handle the case where this is None.
+# - Read each line from the CSV file and add it to the list 'records'. You should appropriately handle the case
+# where the file cannot be found
+# TODO: Your code here
+
+    if menu() == 1:
+        from tui import started
+        from tui import completed
+        from tui import source_data_path
+        for line in source_data_path():
+            records.append(records)
 
 
-
-        # Task 22: Check if the user selected the option for processing data.  If so, then do the following:
-        # - Use the appropriate function in the module tui to display a message to indicate that the data processing
+# Task 22: Check if the user selected the option for processing data.  If so, then do the following:
+# - Use the appropriate function in the module tui to display a message to indicate that the data processing
         # operation has started.
         # - Process the data (see below).
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
