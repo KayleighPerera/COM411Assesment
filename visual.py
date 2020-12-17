@@ -11,6 +11,16 @@ def entities_pie(categories):
     :return: Does not return anything
     """
 
+    categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
+    sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, labels=categories, shadow=True, startangle=90)
+    ax1.axis('equal')
+
+
+plt.show()
+
 
 def entities_bar(categories):
     """
@@ -21,6 +31,15 @@ def entities_bar(categories):
     :param categories: A dictionary with entities categorised into 'low', 'medium' and 'high' gravity
     :return: Does not return anything
     """
+
+    fig = plt.figure()
+    ax = fig.add_axes([0, 0, 1, 1])
+
+    categories = {'Low', 'Medium', 'High'}
+    values = [50, 80, 200]
+
+    ax.bar(categories, values)
+    plt.show()
 
 
 def orbits(summary):
@@ -53,4 +72,3 @@ def gravity_animation(categories):
     :param categories: A dictionary containing "low", "medium" and "high" gravity entities
     :return: Does not return anything
     """
-
