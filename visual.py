@@ -1,25 +1,17 @@
 import matplotlib.pyplot as plt
 
+categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
+sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
-def entities_pie(categories):
-    """
-    Task 24: Display a single subplot that shows a pie chart for categories.
 
-    The function should display a pie chart with the number of planets and the number of non-planets from categories.
-
-    :param categories: A dictionary with planets and non-planets
-    :return: Does not return anything
-    """
-
-    categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
-    sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-
+def pie_chart(categories):
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, labels=categories, shadow=True, startangle=90)
     ax1.axis('equal')
 
 
-plt.show()
+    plt.show()
+pie_chart(categories)
 
 
 def entities_bar(categories):
@@ -31,12 +23,11 @@ def entities_bar(categories):
     :param categories: A dictionary with entities categorised into 'low', 'medium' and 'high' gravity
     :return: Does not return anything
     """
+    categories = {'Low', 'Medium', 'High'}
+    values = [50, 80, 200]
 
     fig = plt.figure()
     ax = fig.add_axes([0, 0, 1, 1])
-
-    categories = {'Low', 'Medium', 'High'}
-    values = [50, 80, 200]
 
     ax.bar(categories, values)
     plt.show()
