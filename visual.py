@@ -1,36 +1,40 @@
+#Q24
 import matplotlib.pyplot as plt
 
 categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
 sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
 
-def pie_chart(categories):
+def entities_pie(categories):
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, labels=categories, shadow=True, startangle=90)
     ax1.axis('equal')
 
-
     plt.show()
-pie_chart(categories)
+
+
+entities_pie(categories)
+
+#Q25
+
+categories = {'High', 'Medium', 'Low'}
+number_of_gravity_entities = [22, 17, 8]
 
 
 def entities_bar(categories):
-    """
-    Task 25: Display a single subplot that shows a bar chart for categories.
+    x_pos = [i for i, _ in enumerate(categories)]
+    plt.bar(x_pos, number_of_gravity_entities, color='blue')
+    plt.xlabel("gravity entity")
+    plt.ylabel("number_of_gravity_entities")
+    plt.title("Gravity Entities")
+    plt.xticks(x_pos, categories)
 
-    The function should display a bar chart for the number of 'low', 'medium' and 'high' gravity entities.
+    plt.minorticks_on()
 
-    :param categories: A dictionary with entities categorised into 'low', 'medium' and 'high' gravity
-    :return: Does not return anything
-    """
-    categories = {'Low', 'Medium', 'High'}
-    values = [50, 80, 200]
-
-    fig = plt.figure()
-    ax = fig.add_axes([0, 0, 1, 1])
-
-    ax.bar(categories, values)
     plt.show()
+
+
+entities_bar(categories)
 
 
 def orbits(summary):
