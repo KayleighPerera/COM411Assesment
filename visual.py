@@ -1,6 +1,7 @@
-#Q24
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
+# Q24
 categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
 sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
@@ -15,7 +16,7 @@ def entities_pie(categories):
 
 entities_pie(categories)
 
-#Q25
+# Q25
 
 categories = {'High', 'Medium', 'Low'}
 number_of_gravity_entities = [22, 17, 8]
@@ -57,7 +58,7 @@ def orbits(summary):
     """
 
 
-def gravity_animation(categories):
+
     """
     Task 27: Display an animation of "low", "medium" and "high" gravities.
 
@@ -67,3 +68,19 @@ def gravity_animation(categories):
     :param categories: A dictionary containing "low", "medium" and "high" gravity entities
     :return: Does not return anything
     """
+
+
+fig, ax = plt.subplots()
+categories = {"low", "medium", "high"}
+
+
+def gravity_animation(categories):
+    categories = range(categories)
+    ax.set_xlabel = "Low to Medium to High"
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 10)
+    ax.plot(categories, categories, 'b--x')
+
+
+anim = animation.FuncAnimation(fig, gravity_animation, frames=10, interval=1000)
+plt.show()
