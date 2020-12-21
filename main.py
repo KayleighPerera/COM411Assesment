@@ -146,20 +146,20 @@ while True:
             from tui import list_entities
             from tui import completed
 
-        if process_type() == 4:
+        if process_type() == 3:
             from tui import started
             records.append(f"{list_categories}")
             from tui import list_categories
             from tui import completed
 
-        if process_type() == 5:
+        if process_type() == 4:
             from tui import started
             from tui import gravity_range
             records.index = {{list_entities}}
             from tui import list_categories
             from tui import completed
 
-        if process_type() == 6:
+        if process_type() == 5:
             from tui import started
             from tui import orbit
             records.index = {{orbit}}
@@ -170,42 +170,42 @@ while True:
 
 # Task 23: Check if the user selected the option for visualising data.  If so, then do the following:
 # - Use the appropriate function in the module tui to indicate that the data visualisation operation
-# has started.
+# has started. ✓
 # - Visualise the data (see below).
 # - Use the appropriate function in the module tui to display a message to indicate that the data visualisation
-# operation has completed.
+# operation has completed. ✓
 
 # To visualise the data, it is recommended that you create and call one or more separate functions that do the
 # following:
 # - Use the appropriate function in the module tui to retrieve the type of visualisation to display.
-# - Check what option has been selected
+# - Check what option has been selected ✓
 
 #   - if the user selected the option to visualise the entity type then
 #       - Use the appropriate function in the module tui to indicate that the entity type visualisation
-#       process has started.
+#       process has started. ✓
 #       - Use your code from earlier to assemble a dictionary containing a list of planets and a list of
-#       non-planets.
+#       non-planets. ✓
 #       - Use the appropriate function in the module visual to display a pie chart for the number of planets
-#       and non-planets
+#       and non-planets ✓
 #       - Use the appropriate function in the module tui to indicate that the entity type visualisation
-#       process has completed.
+#       process has completed. ✓
 
 #   - if the user selected the option to visualise the entity gravity then
 #       - Use the appropriate function in the module tui to indicate that the entity gravity visualisation
-#       process has started.
+#       process has started. ✓
 #       - Use your code from earlier to assemble a dictionary containing lists of entities grouped into
-#       low (below lower limit), medium and high (above upper limit) gravity categories.
-#       - Use the appropriate function in the module visual to display a bar chart for the gravities
+#       low (below lower limit), medium and high (above upper limit) gravity categories.  ✓
+#       - Use the appropriate function in the module visual to display a bar chart for the gravities  ✓
 #       - Use the appropriate function in the module tui to indicate that the entity gravity visualisation
-#       process has completed.
+#       process has completed.  ✓
 
 #   - if the user selected the option to visualise the orbit summary then
 #       - Use the appropriate function in the module tui to indicate that the orbit summary visualisation
-#       process has started.
-#       - Use your code from earlier to assemble a nested dictionary of orbiting planets.
-#       - Use the appropriate function in the module visual to display subplots for the orbits
+#       process has started.  ✓
+#       - Use your code from earlier to assemble a nested dictionary of orbiting planets. ✓
+#       - Use the appropriate function in the module visual to display subplots for the orbits ✓
 #       - Use the appropriate function in the module tui to indicate that the orbit summary visualisation
-#       process has completed.
+#       process has completed.  ✓
 
 #   - if the user selected the option to animate the planet gravities then
 #       - Use the appropriate function in the module tui to indicate that the gravity animation visualisation
@@ -216,6 +216,33 @@ while True:
 #       - Use the appropriate function in the module tui to indicate that the gravity animation visualisation
 #       process has completed.
 # TODO: Your code here
+    if menu() == 3:
+        from tui import started
+        from tui import visualise
+        from tui import completed
+
+        if visualise() == 1:
+            from tui import started
+            from tui import list_categories
+            from visual import entities_pie
+            from tui import completed
+
+        if visualise() == 2:
+            from tui import started
+            from tui import gravity_range
+            from visual import entities_bar
+            from tui import completed
+
+        if visualise() == 3:
+            from tui import orbit
+            from visual import orbits
+            from tui import completed
+
+        if visualise() == 4:
+            from tui import started
+            from tui import list_categories
+            from visual import gravity_animation
+            from tui import completed
 
 # Task 28: Check if the user selected the option for saving data.  If so, then do the following:
 # - Use the appropriate function in the module tui to indicate that the save data operation has started.
@@ -234,6 +261,7 @@ while True:
 # break out of the loop
 # TODO: Your code here
 
+"""
 # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
 # display an error message
 # TODO: Your code here
