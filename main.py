@@ -258,12 +258,19 @@ while True:
 # TODO: Your code here
 
     if menu() == 4:
+        from tui import started
+        class planets:
+
+        from tui import completed
 
 
 
 # Task 29: Check if the user selected the option for exiting.  If so, then do the following:
 # break out of the loop
 # TODO: Your code here
+
+    if menu() == 5:
+        exit()
 
 
 # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
