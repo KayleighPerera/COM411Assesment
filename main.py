@@ -257,15 +257,20 @@ while True:
 #
 # TODO: Your code here
 
+    if menu() == 4:
+
+
+
 # Task 29: Check if the user selected the option for exiting.  If so, then do the following:
 # break out of the loop
 # TODO: Your code here
 
-"""
+
 # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
 # display an error message
 # TODO: Your code here
-"""
+    if menu() >=6 :
+        from tui import error
 
 if __name__ == "__main__":
     run()
