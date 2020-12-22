@@ -7,11 +7,14 @@ def welcome():
 
     # :return: Does not return anything.
     """
+
+
 # TODO: Your code here
 
 def welcome():
     title = 'Solar Record Management System'
     print(len(title) * '-', title, len(title) * '-')
+
 
 welcome()
 
@@ -31,6 +34,8 @@ def menu():
 
     # :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
+
+
 # TODO: Your code here
 
 
@@ -42,30 +47,33 @@ def menu():
             "exit"]
     return data
 
+
 def run():
     print(menu())
 
     print("please select what you would like to do with your data")
-    user_input = int(input())
+    operation = int(input())
 
-    if user_input == 1:
+    if operation == 1:
         print(menu()[0])
         print("Loading data...")
-    if user_input == 2:
+    if operation == 2:
         print(menu()[1])
         print("Processing data...")
-    if user_input == 3:
+    if operation == 3:
         print(menu()[2])
         print("Visualising data...")
-    if user_input == 4:
+    if operation == 4:
         print(menu()[3])
         print("Saving data...")
-    if user_input == 5:
+    if operation == 5:
         print(menu()[4])
         print("Exiting...")
-    elif user_input > 6:
+    elif operation >= 6:
         print("invalid number")
-  
+        exit()
+
+
 run()
 
 """
@@ -81,13 +89,17 @@ def started(operation):
     # :param operation: A string indicating the operation being started
     # :return: Does not return anything
     """
+
+
 # TODO: Your code here
 
-def started(operation):
 
-    print('{operation} has started')
+def started(operation):
+    operation = menu()
+    print(f'{operation} has started')
     return started(operation)
-    
+
+
 """
 def completed(operation):
     
@@ -100,12 +112,16 @@ def completed(operation):
     #:param operation: A string indicating the operation being completed
     #:return: Does not return anything
     """
-    # TODO: Your code here
+
+
+# TODO: Your code here
+
 
 def completed(operation):
-
-    print('{operation} has completed')
+    operation = menu()
+    print(f'{operation} has completed')
     return completed(operation)
+
 
 """
 def error(error_msg):
@@ -119,12 +135,16 @@ def error(error_msg):
     #:param error_msg: A string containing an error message
     #:return: Does not return anything
 """
-    # TODO: Your code here
+
+
+# TODO: Your code here
+
 
 def error():
-
-    print('Error! {error_msg}')
+    error_msg = menu()
+    print(f'Error! {error_msg}')
     return error
+
 
 """
 def source_data_path():
@@ -138,23 +158,27 @@ def source_data_path():
 
     #:return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
-    # TODO: Your code here
+
+
+# TODO: Your code here
+
 
 def source_data_path():
+    print("please enter a file path for a data file")
+    file_path_name = input()
 
-  print("please enter a file path for a data file")
-  file_path_name = input()
+    if file_path_name.endswith(".csv"):
+        return file_path_name
+    else:
+        print("not a valid file path")
+        exit()
 
-  if file_path_name.endswith(".csv"):
-    return file_path_name
-  else:
-    print("not a valid file path")
 
 def run():
-  print(source_data_path())
+    print(source_data_path())
+
 
 run()
-
 
 """
 def process_type():
@@ -173,41 +197,46 @@ def process_type():
 
     #:return: None if an invalid selection made otherwise an integer corresponding to a valid option
     """
-    # TODO: Your code here
-def process_type():
 
-  entities = ["Retrieve entity",
-          "Retrieve entity details",
-          "categorize entities by type",
-          "categorize entities by gravity",
-          "summarise entities by orbit"]
-  
-  return entities
+
+# TODO: Your code here
+
+
+def process_type():
+    entities = ["Retrieve entity",
+                "Retrieve entity details",
+                "categorize entities by type",
+                "categorize entities by gravity",
+                "summarise entities by orbit"]
+
+    return entities
+
 
 def run():
-  print(process_type())
-  
+    print(process_type())
 
-  print("what would you like to do with your entities")
-  user_input = int(input())
-  if user_input == 1:
-    print(process_type()[0])
-    print("Retrieving entities...")
-  if user_input == 2:
-    print(process_type()[1])
-    print("retrieving entity details...")
-  if user_input == 3:
-    print(process_type()[2])
-    print("categorizing entities by types...")
-  if user_input == 4:
-    print(process_type()[3])
-    print("categorizing entities by gravity...")
-  if user_input == 5:
-    print(process_type()[4])
-    print("summarising entities by orbit...")
-  elif user_input > 6:
-    print("invalid number")
-  
+    print("what would you like to do with your entities")
+    user_input = int(input())
+    if user_input == 1:
+        print(process_type()[0])
+        print("Retrieving entities...")
+    if user_input == 2:
+        print(process_type()[1])
+        print("retrieving entity details...")
+    if user_input == 3:
+        print(process_type()[2])
+        print("categorizing entities by types...")
+    if user_input == 4:
+        print(process_type()[3])
+        print("categorizing entities by gravity...")
+    if user_input == 5:
+        print(process_type()[4])
+        print("summarising entities by orbit...")
+    elif user_input > 6:
+        print("invalid number")
+        exit()
+
+
 run()
 
 """
@@ -220,14 +249,17 @@ def entity_name():
 
     #:return: the name of an entity
     """
-    # TODO: Your code here
+
+
+# TODO: Your code here
+
+
 def entity_name():
+    print("What is the name of the entity?")
+    name = input()
+    print("...")
+    return name
 
-  print("What is the name of the entity?")
-  name = input()
-  print ("...")
-
-  return name
 
 """
 def entity_details():
@@ -241,25 +273,29 @@ def entity_details():
 
     #:return: A list containing the name of an entity and a list of column indexes
     """
-    # TODO: Your code here
-def entity_details(): 
 
-  print("What is the name of the entity?")
 
-  name = input()
-  print ("...")
+# TODO: Your code here
 
-  print("enter a list of column indexes")
-  
-  index = [int(input())]
-  print ("...")
-  return name, index
- 
+
+def entity_details():
+    print("What is the name of the entity?")
+
+    name = input()
+    print("...")
+
+    print("enter a list of column indexes")
+
+    index = [int(input())]
+    print("...")
+    return name, index
+
+
 def run():
-  print(entity_details())
+    print(entity_details())
+
 
 run()
-
 
 """
 def list_entity(entity, cols=[]):
@@ -268,9 +304,9 @@ def list_entity(entity, cols=[]):
     #If no column indexes have been specified, then all the data for the entity will be displayed.
 
     #The entity is a list of values corresponding to particular Solar System space entity
-    #E.g. ['Earth', TRUE, 9.8].
+    #E.g. ['Earth', TRUE, 9.8]. ✔
     #The function should only display those values from the entity list that correspond to the column
-    #indexes provided as part of cols.
+    #indexes provided as part of cols. *
     #E.g. if cols is [0, 2] then for the entity ['Earth', TRUE, 9.8] the following will be displayed
     #['Earth', 9.8]
     #E.g. if cols is an empty list then all the values will be displayed i.e. ['Earth', TRUE, 9.8]
@@ -279,7 +315,39 @@ def list_entity(entity, cols=[]):
     #:param cols: A list of integer values that represent column indexes
     #:return: does not return anything
     """
-    # TODO: Your code here
+
+
+# TODO: Your code here
+def list_entity():
+    cols = [['Mercury', True, 3.7], ['Venus', True, 4.6], ['Earth', True, 5.7], ['Mars', True, 2.7]]
+
+    return cols
+
+
+def run():
+    print(list_entity())
+
+    index = (float(input("what is the index\n")))
+    if index != 3.7 or 4.6 or 5.7 or 2.7:
+        exit()
+
+    print("please select the entity")
+    user_input = int(input())
+
+    if user_input == 1:
+        print(list_entity()[0])
+
+    elif user_input == 2:
+        print(list_entity()[1])
+
+    elif user_input == 3:
+        print(list_entity()[2])
+
+    elif user_input == 4:
+        print(list_entity()[3])
+
+
+run()
 
 """
 def list_entities():
@@ -303,7 +371,7 @@ def list_entities():
     #:param cols: A list of integer values that represent column indexes
     #:return: Does not return anything
     """
-    # TODO: Your code here
+# TODO: Your code here
 
 """
 def list_categories():
@@ -318,13 +386,16 @@ def list_categories():
     #:param categories: A dictionary containing category names and a list of entities that are part of that category
     #:return: Does not return anything
     """
-    # TODO: Your code here
-def list_categories(categories):
 
+
+# TODO: Your code here
+
+
+def list_categories(categories):
     categories = {"Terrestrial Planets",
-                     "Gas Giants",
-                     "Ice Giants",
-                     "Dwarf Planets"}
+                  "Gas Giants",
+                  "Ice Giants",
+                  "Dwarf Planets"}
     select = input()
 
     if select == "Terrestrial Planets":
@@ -338,9 +409,8 @@ def list_categories(categories):
 
     if select == "Dwarf Planets":
         print(select == ["Pluto", "Eris"])
-  
-    return None
 
+    return None
 
 
 """
@@ -354,19 +424,19 @@ def gravity_range():
 
     #:return: a tuple with the lower and upper limits
     """
-    # TODO: Your code here#
-def gravity_range():
 
-  lower_upper= [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
-  
-  print(tuple(lower_upper))
-  
-  
-  return lower_upper
+
+# TODO: Your code here#
+
+
+def gravity_range():
+    lower_upper = [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
+    print(tuple(lower_upper))
+
+    return lower_upper
+
 
 gravity_range()
-
-
 
 """
 def orbits():
@@ -380,16 +450,23 @@ def orbits():
 
     #:return: a list of entity names
     """
-    # TODO: Your code here
-def orbit():
-  entities = input("enter a list of the planets names ")
-  planets = entities.split(",")
 
-  print("\n")
-  print("Printing all planet names....")
-  for name in planets:
-    print(name)
-  return planets
+
+# TODO: Your code here
+
+
+def orbit():
+    entities = input("enter a list of the planets names ")
+    planets = entities.split(",")
+
+    print("\n")
+    print("Printing all planet names....")
+    for name in planets:
+        print(name)
+
+    return planets
+
+
 orbit()
 
 """
@@ -408,15 +485,18 @@ def visualise():
 
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
-# TODO: Your code here
-    
-def visualise():
 
+
+# TODO: Your code here
+
+
+def visualise():
     visualisations = ["Entities by type",
                       "Entities by gravity",
                       "Summery of orbits"]
     print("...")
     return visualisations
+
 
 def run():
     print(visualise())
@@ -429,10 +509,11 @@ def run():
         print(visualise()[1])
     if user_input == 3:
         print(visualise()[2])
-    elif user_input > 6:
+    elif user_input > 4:
         print("invalid number")
+        exit()
 
- 
+
 run()
 
 """
@@ -451,8 +532,8 @@ def save():
     #:return: None if an invalid selection is made otherwise an integer corresponding to a valid option
 """
 
-def save():
 
+def save():
     saved = ["export as JSON"]
 
     return saved
@@ -471,7 +552,7 @@ def run():
         print("done")
     elif user_input > 2:
         print("invalid number")
+        exit()
 
 
 run()
-
