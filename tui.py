@@ -318,36 +318,6 @@ def list_entity(entity, cols=[]):
 
 
 # TODO: Your code here
-def list_entity():
-    cols = [['Mercury', True, 3.7], ['Venus', True, 4.6], ['Earth', True, 5.7], ['Mars', True, 2.7]]
-
-    return cols
-
-
-def run():
-    print(list_entity())
-
-    index = (float(input("what is the index\n")))
-    if index != 3.7 or 4.6 or 5.7 or 2.7:
-        exit()
-
-    print("please select the entity")
-    user_input = int(input())
-
-    if user_input == 1:
-        print(list_entity()[0])
-
-    elif user_input == 2:
-        print(list_entity()[1])
-
-    elif user_input == 3:
-        print(list_entity()[2])
-
-    elif user_input == 4:
-        print(list_entity()[3])
-
-
-run()
 
 """
 def list_entities():
@@ -372,6 +342,39 @@ def list_entities():
     #:return: Does not return anything
     """
 # TODO: Your code here
+
+
+def list_entity():
+    cols = [['Mercury', True, 3.7], ['Venus', True, 4.6], ['Earth', True, 5.7], ['Mars', True, 2.7]]
+
+    return cols
+
+
+def run():
+    print(list_entity())
+
+    index = (float(input("what is the index\n")))
+    print("please select the entity")
+    user_input = int(input())
+
+    if index == 3.7:
+        print(list_entity()[0])
+
+    elif index == 4.6:
+        print(list_entity()[1])
+
+    elif index == 5.7:
+        print(list_entity()[2])
+
+    elif index == 2.7:
+        print(list_entity()[3])
+
+    else:
+        print(list_entity())
+
+
+run()
+
 
 """
 def list_categories():
