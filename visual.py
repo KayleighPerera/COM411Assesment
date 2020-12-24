@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-# Q24
+# Task 24
 categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
 sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 
@@ -16,8 +16,7 @@ def entities_pie(categories):
 
 entities_pie(categories)
 
-# Q25
-
+# Task 25
 categories = {'High', 'Medium', 'Low'}
 number_of_gravity_entities = [22, 17, 8]
 
@@ -37,39 +36,28 @@ def entities_bar(categories):
 
 entities_bar(categories)
 
+# Task 26
+
+summary = {"orbited planet": {"small": [3, 1, 2], "large": [3, 4]}}
+entitys = [1, 2, 3, 4, 5, 6, 7, 8]
+
 
 def orbits(summary):
-    """
-    Task 26: Display subplots where each subplot shows the "small" and "large" entities that orbit the planet.
+    x_pos = [i for i, _ in enumerate(summary)]
+    plt.bar(x_pos, number_of_gravity_entities, color='pink')
+    plt.xlabel("gravity entity")
+    plt.ylabel("number_of_gravity_entities")
+    plt.title("Gravity Entities")
+    plt.xticks(x_pos, summary)
 
-    Summary is a nested dictionary of the form:
-    summary = {
-        "orbited planet": {
-            "small": [entity, entity, entity],
-            "large": [entity, entity]
-        }
-    }
+    plt.minorticks_on()
 
-    The function should display for each orbited planet in summary. Each subplot should show a bar chart with the
-    number of "small" and "large" orbiting entities.
-
-    :param summary: A dictionary containing the "small" and "large" entities for each orbited planet.
-    :return: Does not return anything
-    """
+    plt.show()
 
 
+orbits(summary)
 
-    """
-    Task 27: Display an animation of "low", "medium" and "high" gravities.
-
-    The function should display a suitable animation for the "low", "medium" and "high" gravity entities.
-    E.g. an animated line plot
-
-    :param categories: A dictionary containing "low", "medium" and "high" gravity entities
-    :return: Does not return anything
-    """
-
-
+# Task 27
 fig, ax = plt.subplots()
 categories = {"low", "medium", "high"}
 
