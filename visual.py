@@ -2,15 +2,16 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Task 24
-categories = {"Moon", "Europa", "Ganymede", "Titan", "Callisto", "Venus", "Earth", "Mars", "Saturn", "Jupiter"}
-sizes = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+categories = {"planets", "none-planets"}
+sizes = [252, 13]
 
 
 def entities_pie(categories):
     fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, labels=categories, shadow=True, startangle=90)
+    ax1.pie(sizes, colors=['yellow', 'green'], labels=categories, shadow=True, startangle=90)
     ax1.axis('equal')
 
+    plt.legend()
     plt.show()
 
 
@@ -38,24 +39,12 @@ entities_bar(categories)
 
 # Task 26
 
-summary = {"orbited planet": {"small": [3, 1, 2], "large": [3, 4]}}
-entitys = [1, 2, 3, 4, 5, 6, 7, 8]
+summary = {'small': 15, 'large': 30}
 
+plt.bar(range(len(summary)), list(summary.values()), align='center', color="red")
+plt.xticks(range(len(summary)), list(summary.keys()))
 
-def orbits(summary):
-    x_pos = [i for i, _ in enumerate(summary)]
-    plt.bar(x_pos, number_of_gravity_entities, color='pink')
-    plt.xlabel("gravity entity")
-    plt.ylabel("number_of_gravity_entities")
-    plt.title("Gravity Entities")
-    plt.xticks(x_pos, summary)
-
-    plt.minorticks_on()
-
-    plt.show()
-
-
-orbits(summary)
+plt.show()
 
 # Task 27
 fig, ax = plt.subplots()
