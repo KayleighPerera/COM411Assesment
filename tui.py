@@ -9,16 +9,19 @@ welcome()
 
 # Task 2
 def menu():
-    data = ["Load Data",
-            "Process Data",
-            "Visualise Data",
-            "save data",
-            "exit"]
+    data = ["[1] Load Data",
+            "[2] Process Data",
+            "[3] Visualise Data",
+            "[4] save data",
+            "[5] exit"]
+
     return data
 
 
 def run():
-    print(menu())
+    dat = menu()
+    for index in range(len(dat)):
+        print("{}".format(dat[index]))
 
     print("please select what you would like to do with your data")
     operation = int(input())
@@ -91,17 +94,19 @@ run()
 
 # Task 7
 def process_type():
-    entities = ["Retrieve entity",
-                "Retrieve entity details",
-                "categorize entities by type",
-                "categorize entities by gravity",
-                "summarise entities by orbit"]
+    entities = ["[1] Retrieve entity",
+                "[2] Retrieve entity details",
+                "[3] categorize entities by type",
+                "[4] categorize entities by gravity",
+                "[5] summarise entities by orbit"]
 
     return entities
 
 
 def run():
-    print(process_type())
+    type = process_type()
+    for index in range(len(type)):
+        print("{}".format(type[index]))
 
     print("what would you like to do with your entities")
     user_input = int(input())
@@ -289,15 +294,19 @@ orbit()
 
 # Task 15:
 def visualise():
-    visualisations = ["Entities by type",
-                      "Entities by gravity",
-                      "Summery of orbits"]
-    print("...")
+    visualisations = ["[1] Entities by type",
+                      "[2] Entities by gravity",
+                      "[3] Summery of orbits"]
+
     return visualisations
 
 
 def run():
-    print(visualise())
+
+    vis = visualise()
+    for index in range(len(vis)):
+        print("{}".format(vis[index]))
+
     print("please select what you would like to see")
     user_input = int(input())
 
@@ -310,6 +319,7 @@ def run():
     elif user_input > 4:
         print("invalid number")
         exit()
+    print("...")
 
 
 run()
@@ -317,13 +327,16 @@ run()
 
 # Task 16
 def save():
-    saved = ["export as JSON"]
+    saved = ["[1] export as JSON"]
 
     return saved
 
 
 def run():
-    print(save())
+
+    sav = save()
+    for index in range(len(sav)):
+      print("{}".format(sav[index]))
 
     print("How should the data be saved")
     user_input = int(input())
