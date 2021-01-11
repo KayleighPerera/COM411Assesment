@@ -1,3 +1,6 @@
+"""displays a title """
+
+
 # Task 1
 def welcome():
     title = 'Solar Record Management System'
@@ -6,8 +9,9 @@ def welcome():
 
 welcome()
 
+"""displays a menu of options for the user to choose from"""
 
-# Task 2
+
 def menu():
     data = ["[1] Load Data",
             "[2] Process Data",
@@ -50,6 +54,9 @@ def run():
 
 
 run()
+menu()
+
+"""gets information from task 2 and prints out the operation has started"""
 
 
 # Task 3
@@ -59,6 +66,9 @@ def started(operation):
     return started(operation)
 
 
+"""gets information from task 2 and prints out the operation has been completed"""
+
+
 # Task 4
 def completed(operation):
     operation = menu()
@@ -66,11 +76,17 @@ def completed(operation):
     return completed(operation)
 
 
+"""gets information from task 2 and prints out the operation has an error"""
+
+
 # Task 5
 def error(error_msg):
     error_msg = menu()
     print(f'Error! {error_msg}')
     return error
+
+
+"""Asks user to input a csv file name"""
 
 
 # Task 6
@@ -90,6 +106,8 @@ def run():
 
 
 run()
+
+"""displays a menu of options for the user to choose from"""
 
 
 # Task 7
@@ -135,6 +153,8 @@ def run():
 
 run()
 
+"""asks user to input an entity name"""
+
 
 # Task 8
 def entity_name():
@@ -142,6 +162,9 @@ def entity_name():
     name = input()
     print("...")
     return name
+
+
+"""asks user to enter entity details"""
 
 
 # Task 9:
@@ -165,16 +188,19 @@ def run():
 
 run()
 
+"""gives user a list of entity options for the user to choose from"""
 # Task 10
-entity = [['Mercury', True, 3.7], ['Venus', True, 4.6], ['Earth', True, 5.7], ['Mars', True, 2.7]]
+entity = [['Mercury', True, 3.7], ['Venus', True, 8.87], ['Earth', True, 9.8], ['Mars', True, 3.71]]
 
 
 def list_entity(entity, cols=[]):
-    print(entity)
+    ent = entity
+    for index in range(len(ent)):
+        print("{}".format(ent[index]))
+
     print("enter a list of column indexes")
 
     cols = [(input())]
-    map_object = map(int, cols)
     return cols
 
 
@@ -187,26 +213,30 @@ def run():
 
     if index == 3.7:
         print(entity[0])
+        print("...")
 
-    elif index == 4.6:
+    elif index == 8.87:
         print(entity[1])
+        print("...")
 
-    elif index == 5.7:
+    elif index == 9.8:
         print(entity[2])
+        print("...")
 
-    elif index == 2.7:
+    elif index == 3.71:
         print(entity[3])
+        print("...")
 
     else:
         print(entity)
+        print("...")
 
 
 run()
 
+"""gives user a list of entity options for the user to choose another entity"""
 # Task 11
-
-
-entity = [['Mercury', True, 3.7], ['Venus', True, 4.6], ['Earth', True, 5.7], ['Mars', True, 2.7]]
+entity = [['Mercury', True, 3.7], ['Venus', True, 8.87], ['Earth', True, 9.8], ['Mars', True, 3.71]]
 
 
 def list_entity(entity, cols):
@@ -214,7 +244,9 @@ def list_entity(entity, cols):
 
 
 def run():
-    print(entity)
+    list = entity
+    for index in range(len(list)):
+        print("{}".format(list[index]))
 
     cols = (float(input("enter another index for an entity\n")))
     print("please select the entity")
@@ -222,22 +254,27 @@ def run():
 
     if cols == 3.7:
         print(list_entity(entity, cols)[0])
+        print("...")
 
-    elif cols == 4.6:
+    elif cols == 8.87:
         print(list_entity(entity, cols)[1])
+        print("...")
 
-    elif cols == 5.7:
+    elif cols == 9.8:
         print(list_entity(entity, cols)[2])
-
-    elif cols == 2.7:
+        print("...")
+    elif cols == 3.71:
         print(list_entity(entity, cols)[3])
+        print("...")
 
     else:
         print(list_entity(entity, cols))
+        print("...")
 
 
 run()
 
+"""prints a list for user, and the user should input a category to give another list of entitys for that category"""
 # Task 12
 categories = print({"Terrestrial Planets", "Gas Giants", "Ice Giants", "Dwarf Planets"})
 
@@ -247,7 +284,7 @@ def list_categories(categories):
 
 
 def run():
-    select = input("write down the type of planet\n")
+    select = input("Select the type of planet\n")
 
     if select == "Terrestrial Planets":
         print(["Mercury", "Venus", "Earth", "Mars"])
@@ -264,16 +301,20 @@ def run():
 
 run()
 
+"""asks user to input an upper and lower limit for the gravity range"""
+
 
 # Task 13
 def gravity_range():
-    lower_upper = [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
-    print(tuple(lower_upper))
+    limit = [float(input("please enter the upper limit\n")), float(input("please enter the lower limit\n"))]
+    print(tuple(limit))
 
-    return lower_upper
+    return limit
 
 
 gravity_range()
+
+"""asks user to input plant names and then print out a list of the planets"""
 
 
 # Task 14:
@@ -291,6 +332,8 @@ def orbit():
 
 orbit()
 
+"""displays a menu of options for the user to choose from to visualise data"""
+
 
 # Task 15:
 def visualise():
@@ -302,7 +345,6 @@ def visualise():
 
 
 def run():
-
     vis = visualise()
     for index in range(len(vis)):
         print("{}".format(vis[index]))
@@ -324,6 +366,8 @@ def run():
 
 run()
 
+"""displays a menu of options for the user to choose from to save data"""
+
 
 # Task 16
 def save():
@@ -333,10 +377,9 @@ def save():
 
 
 def run():
-
     sav = save()
     for index in range(len(sav)):
-      print("{}".format(sav[index]))
+        print("{}".format(sav[index]))
 
     print("How should the data be saved")
     user_input = int(input())
