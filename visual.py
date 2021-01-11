@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
+
+"""creates a pie chart with entities from the data given"""
 # Task 24
 categories = {"planets", "none-planets"}
 sizes = [252, 13]
@@ -17,6 +19,7 @@ def entities_pie(categories):
 
 entities_pie(categories)
 
+"""creates a bar chart with high, medium and low entities"""
 # Task 25
 categories = {'High', 'Medium', 'Low'}
 number_of_gravity_entities = [22, 17, 8]
@@ -34,10 +37,9 @@ def entities_bar(categories):
 
     plt.show()
 
-
-entities_bar(categories)
-
+"""creates a bar chart with small and large entities"""
 # Task 26
+entities_bar(categories)
 
 summary = {'small': 15, 'large': 30}
 
@@ -46,6 +48,7 @@ plt.xticks(range(len(summary)), list(summary.keys()))
 
 plt.show()
 
+"""task 27 creates an animation line graph that represents the low medium and high gravity levels"""
 # Task 27
 fig, ax = plt.subplots()
 categories = {"low", "medium", "high"}
