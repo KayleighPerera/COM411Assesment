@@ -1,30 +1,40 @@
 # Task 17
 from abc import abstractmethod
-
-import tui
+from abc import ABC
 import csv
+import tui
 import visual
 
+"""creates a list called records"""
 # Task 18
 records = []
+
+"""imports the title from tui"""
 
 
 # Task 19
 def run():
-    from tui import welcome
+    print(tui.welcome())
 
 
+"""imports menu from tui"""
 # Task 20
 while True:
     from tui import menu
 
+    """imports menu if the input is a certain value then it prints out valid information from that input(tasks21,22,
+    23) """
     # Task 21
     if menu() == 1:
+        print(started)
         from tui import started
         from tui import source_data_path
 
-        for line in source_data_path():
-            records.append(records)
+        with open("sol_data.csv") as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
+            for row in csv_reader:
+                records.append(records)
+        print(completed)
         from tui import completed
 
     # Task 22:
@@ -37,22 +47,26 @@ while True:
             from tui import started
             from tui import entity_name
             from tui import entity_details
-
             index = records.index
+            from tui import list_entity
             from tui import completed
 
         if process_type() == 2:
             from tui import started
             from tui import entity_details
-
             index = records.index
             from tui import list_entity
             from tui import completed
 
         if process_type() == 3:
             from tui import started
-
-            records.append(f"{list_categories}")
+            planets = {
+                "types_of_planets": {
+                    "planets": ["Pluto", "Earth", "Venus"],
+                    "none-planets": ["Moon", "Europa"]
+                }
+            }
+            records.append(f"{planets}")
             from tui import list_categories
             from tui import completed
 
@@ -60,7 +74,14 @@ while True:
             from tui import started
             from tui import gravity_range
 
-            records.index = {{list_entity}}
+            category_limits = {
+                "limits": {
+                    "lower_limit": ["1"],
+                    "medium_limit": ["250"],
+                    "upper_limit": ["500"]
+                }
+            }
+            records.append({category_limits})
             from tui import list_categories
             from tui import completed
 
@@ -68,9 +89,15 @@ while True:
             from tui import started
             from tui import orbit
 
+            orbited_planets = {
+                "output": {
+                    "limits": ["1-500"],
+                    "planets": ["Pluto", "Earth", "Venus", "Moon", "Europa"]
+                }
+            }
             records.index = {{orbit}}
             records.index = {{list_categories}}
-        if list_categories() <= 100 or "high":
+        if gravity_range() <= 100 or "high":
             from tui import list_categories
             from tui import completed
 
@@ -82,34 +109,58 @@ while True:
 
         if visualise() == 1:
             from tui import started
-            from tui import list_categories
+            planets = {
+                "types_of_planets": {
+                    "planets": ["Pluto", "Earth", "Venus"],
+                    "none-planets": ["Moon", "Europa"]
+                }
+            }
             from visual import entities_pie
             from tui import completed
 
         if visualise() == 2:
             from tui import started
-            from tui import gravity_range
+            limits = {
+                "limits": {
+                    "lower_limit": ["1"],
+                    "medium_limit": ["250"],
+                    "upper_limit": ["500"]
+                }
+            }
             from visual import entities_bar
             from tui import completed
 
         if visualise() == 3:
             from tui import orbit
-            from visual import orbits
+            output = {
+                "output": {
+                    "limits": ["1-500"],
+                    "planets": ["Pluto", "Earth", "Venus", "Moon", "Europa"]
+                }
+            }
+            from visual import entities_bar
             from tui import completed
 
         if visualise() == 4:
             from tui import started
-            from tui import list_categories
+            category_limits = {
+                "limits": {
+                    "lower_limit": ["1"],
+                    "medium_limit": ["250"],
+                    "upper_limit": ["500"]
+                }
+            }
             from visual import gravity_animation
             from tui import completed
 
+    """creates an abstract class with none planets and planets and then creates a class that inherits from the 
+        abstract class """
     # Task 28
     if menu() == 4:
         from tui import started
 
 
         class planets:
-            from abc import ABC, abstractmethod
 
             class Abstract(ABC):
                 @abstractmethod
@@ -143,12 +194,15 @@ while True:
 
         from tui import completed
 
+        """if user chooses the option exit the program will exit"""
         # Task 29
         if menu() == 5:
             exit()
 
+        """if an invalid number is chosen then an error message should appear"""
         # Task 30:
         if menu() >= 6:
+            print(error)
             from tui import error
 
         if __name__ == "__main__":
